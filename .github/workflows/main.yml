@@ -14,6 +14,6 @@ jobs:
       -  name: copy file to server
          uses: appleboy/ssh-action@v1.0.3
          with:
-           host: ${{ SERVER_HOST.SERVER_HOST }}
-           username: ${{ SERVER_HOST.SERVER_USER }}
-           key: ${{ SERVER_HOST.SSH_PRIVATE_KEY }}
+           host: ${{ secrets.SERVER_HOST }}
+           username: ${{ secrets.SERVER_USER }}
+           key: ${{ secrets.SSH_PRIVATE_KEY }}
