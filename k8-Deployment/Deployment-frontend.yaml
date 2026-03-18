@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  labels:
+    app: crm-frontend
+    env: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: crmapp-frontend
+  template:
+    metadata:
+      labels:
+        app: crmapp-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: anandu408/frontend
+        ports:
+        - containerPort: 80
