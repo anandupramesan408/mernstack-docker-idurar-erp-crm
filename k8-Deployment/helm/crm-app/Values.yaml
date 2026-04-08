@@ -1,0 +1,28 @@
+#------------Front end-------------
+frontend:
+  name: crm-frontend
+  replicaCount: 2
+  image:
+    repository: anandu408/frontend
+    tag: latest
+  port: 80
+
+  #-------------Backend--------------
+backend:
+  name: crm-backend
+  replicaCount: 2
+  image:
+    repository: anandu408/backend
+    tag: latest
+  port: 5000
+  #---------------mongo--------------
+mongo:
+  name: mongo
+  replicaCount: 1
+  image:
+    repository: mongo
+    tag: latest
+  port: 27017
+  storage:
+    size: 5Gi
+    hostpath: /data/db
